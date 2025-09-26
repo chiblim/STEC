@@ -214,7 +214,7 @@ def placer_rectangles_optimise(rectangles, largeur_zone, hauteur_zone, zone_inte
                 break
             y += 0.5
         if not place:
-            print(f"⚠️ Le rectangle {nom} n'a pas pu être placé.")
+            print(f" Le rectangle {nom} n'a pas pu être placé.")
     return positions
 
 
@@ -329,4 +329,5 @@ def lancer_pipeline_agencement(chemin_excel,event=None):
 
     image_path = path.join(OUTPUT_FOLDER, "agencement.png")
     dessiner_agencement(positions, 40, 50, zone_interdite, save_path=image_path)
+
     return positions, df_max_supports
