@@ -10,14 +10,14 @@ from os import makedirs, path
 import tkinter.messagebox
 
 
-# Variable globale pour stocker le fichier sélectionné
+
 chemin_fichier_selectionne = None  
 
 def generer_template_excel():
     from openpyxl import Workbook
     wb = Workbook()
 
-    # Feuilles et colonnes comme ton fichier actuel
+    
     feuilles = {
         "Extraction": ["URL extraction"],
         "Compétences": ["Compétences STEC"],
@@ -30,7 +30,7 @@ def generer_template_excel():
         ws = wb.create_sheet(title=nom)
         ws.append(colonnes)
 
-    # Ajouter la feuille "Aide"
+   
     ws_aide = wb.create_sheet(title="Aide")
     aide_text = [
         ["Veillez fournir le ou les urls des fichier excels suivant dans les feuilles concernées"],
@@ -51,7 +51,7 @@ def generer_template_excel():
     for row in aide_text:
         ws_aide.append(row)
 
-    # Supprimer la feuille par défaut "Sheet"
+    
     if "Sheet" in wb.sheetnames:
         del wb["Sheet"]
 
@@ -154,7 +154,8 @@ def lancer_interface():
 
     root.mainloop()
 
-# Permet de lancer l'interface directement si on exécute ce fichier
+
 if __name__ == "__main__":
     lancer_interface()
+
 
